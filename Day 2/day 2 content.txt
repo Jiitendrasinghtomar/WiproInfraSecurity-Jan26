@@ -1,0 +1,147 @@
+Operating System (OS)
+	- Server OS
+		- is responsible for SERVING the service
+		- ex:
+			- Windows Server NT
+			- Windows Server 2003
+			- Windows Server 2008
+			- Windows Server 2008R2
+			- Windows Server 2012
+			- Windows Server 2012R2
+			- Windows Server 2016	-> we will use
+			- Windows Server 2019
+			- Windows Server 2022
+			- Windows Server 2025
+			- RedHat Enterprise Linux (RHEL) 10
+			- Ubuntu 24.04
+			- CentOS 10
+			- Fedora
+			- SUSE Linux
+			
+	- Client OS
+		- is responsible for requesting the service
+		- ex:
+			- Windows XP
+			- Windows 7
+			- Windows Vista
+			- Windows 8.0
+			- Windows 8.1			
+			- Windows 10			
+			- Windows 11
+			- RHEL
+			- CentOS
+			- OpenSUSE
+			- Ubuntu
+			- Arch Linux
+			- Kali Linux
+				- etc...
+
+Opensource
+	- free to download
+	- free to use
+	- free to share
+	- free to change the source code
+	- Linux is Opensource
+Freeware
+	- free to download
+	- free to use
+	- free to share
+	- you cannot change the source code
+	- UNIX is freeware
+	
+UNIX
+	- Linux is derived from UNIX
+	- UNIX = 1st Jan 1970
+		- Linux = 17th Sept 1991
+	- UNIX is HARDWARE DEPENDENT
+		HP 	-> HP-UX
+		IBM -> AIX
+
+Linux shadow file
+---------------------
+	$1 -> MD5
+	$5 -> SHA256
+	$6 -> SHA512
+	$y -> yescrypt
+	
+
+name-version-release-architecture.rpm
+
+architecture
+	i686	-> 32 bit
+	x86_64	-> 64 bit
+	noarch	-> no architecture (architecture free -> both 32&64)
+	
+SELinux
+	- Security Enhanced Linux
+	- default its always "Enforcing"
+	- modes
+		- Enforcing 	- 100% active
+		- Permissive 	- partial active
+		- Disabled		- 100% inactive
+	- commands
+		# getenforce	//list the SELinux mode
+		# setenforce	//set/changes the mode
+		# sestatus		//displays SELinux status
+		
+		
+		SUDO user
+		
+		
+		
+Multi-User Hierarchical File System :
+==============
+/
+	- /bin		= command binaries of regular users
+	- /sbin		= command binaries of ROOT user
+	- /home		= home directory of regular user
+					- /home/chirag
+					- /home/tanu
+	- /root		= home directory of ROOT user.
+	- /etc		= contains the configuration files
+	- /var		= contains LOG files in it.
+	- /tmp		= contains temporary files, that can be deleted anytime.
+	- /dev		= contains all the device related file in it.
+	- /mnt		= mount point, where devices are mounted and accessed. (old)
+	- /run		= similar to /mnt, but nowadays all systems use /run. (new)
+	- /usr		= contains users installed applications
+	- /opt		= legacy support for /usr
+	- /lib		= for developers -> 32bit systems
+		- /libx64	= for developers -> 64bit systems
+	- /boot		= contains boot related files. (Minimum: 500MB)
+	- /proc		= contains all the running processes in it.
+	
+	
+	Pendrive (myPD) --> /dev/myPD (unreadable) --> /mnt/myPD (readable)
+	
+Port number:
+-------------
+	80 		- HTTP (8080)
+	443		- HTTPS (secured verison og HTTP)
+	53		- DNS
+	67/68	- DHCP
+	20/21	- FTP
+	22		- SSH (connects linux OS remotely)
+	23		- telnet
+	3389	- RDP (connects Windows OS remotely)
+	123		- NTP
+	
+	1433	- Microsoft SQL server
+	1521	- Oracle DB
+	3306	- MySQL
+	5900	- VNC Tiger
+	5601	- Kibana monitoring
+	
+	
+Task 
+	- install a centos 9 machine with the following details:
+		1. RAM	: 4GB
+		2. HDD	: 40GB
+		3. NIC	: NAT
+		4. Hostname: c9client
+		5. ping client and server (c9svr)
+		6. ping client to google.com
+		
+		
++91-9131489230 (whatsapp)
+jeetu.singh5591@hotmail.com
