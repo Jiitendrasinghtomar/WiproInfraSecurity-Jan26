@@ -1,0 +1,155 @@
+SSH service			--> sshd
+HTTP service 		--> httpd
+FTP service			--> vsftpd
+squid proxy			--> squid
+DNS server			--> named
+
+IP address
+-----------
+	- IPv4 vs IPv6
+	- IPv4 classes
+		Class A -> 1 - 126
+					0.0.0.0/0 -> internet 
+					127.0.0.1 -> loop back IP address
+		Class B -> 128 - 191
+		Class C -> 192 - 223
+		Class D -> 224 - 239
+		Class E -> 240 - 255
+	- Types of IP addresses
+		- Public IP addresses
+			- addresses that are used on the internet
+		- Private IP addresses
+			- addresses that are used within 
+				- home
+				- company (small, med or large)
+	- Static IP & Dynamic IP address
+		Static IP 
+			- the IP address that will NOT change automatically. 
+			- it can be public (purchased) or private
+		Dynamic IP 
+			- this may change once lease time is over.
+			- these are cheap
+			
+reasons when IP changes:
+	- if lease time is over.
+	- if you run the command "ipconfig /release" &
+	- if you run the command "ipconfig /renew"
+	
+	APIPA 
+		- Automatic Private IP Addressing
+		- NIC automatically assigns IP address from specific IP range to ITSELF.
+		- Range: 169.254.X.X
+				 (169.254.1.1 - 169.254.255.255)
+				 
+Reserved IP address
+	- 0.0.0.0/0		--> denotes internet
+	- 127.0.0.1		--> loopback ip address
+	- 169.254.x.x	--> APIPA
+	- Reserved Private IP Class A -> 10.0.0.0 - 10.255.255.255
+	- Reserved Private IP Class B -> 172.16.0.0 - 172.16.255.255
+	- Reserved Private IP Class C -> 192.168.0.0 - 192.168.255.255
+	- 255.255.255.255	--> Direct broadcast IP address
+	
+	
+Roles within a windows server
+-------------------------------
+	- ADDS - Active Directory Domain Services
+	- ADCS - Active Directory Certificate services
+	- ADFS - Active Directory Federation Services
+	- AD-LDS - Active Direct Light-wight Directory Access Services
+	- DHCP - Dynamic Host Configuration Protocol
+	- DNS  - Domain Name System
+	- WDS  - Windows Deployment Service
+	- WSUS - Windows Server Update Service
+	- IIS  - Internet Information Service
+	- Hyper-V - Hypervisor
+	- FIle & Print services
+		...
+		
+Active Directory (AD)
+	- Windows 	->> Windows Active Directory (WAD)
+	- Azure		->> Azure Active Directory (AAD) --> Microsoft Entra ID (latest)
+
+Components of AD:
+	1. Physical Component
+		- DC
+			- domain controller - its a server that controls whole org.
+			- this DC stores a database named "NTDS.DIT".
+		- RODC
+			- Read-Only Domain Controller
+			- used in branch offices.
+			- its the read-only copy of NTDS.DIT file.
+		- Global Catalog (GC) Server
+			- its a server used for quick scanning or searching of any AD object.
+			- it gets installed while installing the domain controller
+		- Sites
+			- its a physical geographical location.
+	2. Logical Component
+		- Domain
+			- its the logical, administrative boundaries of an org.
+			- it is represented as a "Triangle".
+		- Domain Tree
+			- is a collection of various domains and sub-domains of an org.
+		- Forest
+			- collection of domain trees.
+		- Schema
+			- blueprint of an org. 
+		- Partition
+			- its the logical seperation of NTDS.DIT database
+		- Organizational Unit (OU)
+			- its similar to a  department.
+			ex:
+				- managers OU
+				- Sales OU
+				- IT dept. 
+			- it contains object within
+				1. Users
+				2. computers
+				3. groups
+
+How to create a Domain Controller
+	- install a windows server OS (2016 or above)
+	- Perform the post-installation procedure.
+		- change the computer name
+		- provide IP address (Static IP)
+		- change the date and time (time zone)
+	- install the ADDS role on this server
+	- promote this server to a domain controller
+
+DNS
+	- Domain Name System
+	- its a role in windows server that helps in resolving name into IP and vice versa. 
+	- it works on prot number 53/tcp and 53/udp.
+	- DNS gets automatically installed while installing ADDS role.
+	- AD requires DNS.
+
+DHCP
+	- it dynamically allocates:
+		- IP address
+		- Default subnet mask
+		- Default Gateway
+		- DNS address
+	- port number
+		- 67 - DHCP server (responding)
+		- 68 - DHCP client (listening)
+	- it works on DORA process
+		- D = Discover
+		- O = Offer
+		- R = Request
+		- A = Acknowledgement
+		
+Web server
+-----------
+	- windows	-> IIS web server
+	- linux		-> Apache web server, Nginx
+- works on port 80 (HTTP)
+- works on port 443 (HTTP + SSL certificate = HTTPS) --> secure
+- service name: httpd
+
+Task 
+	- Install a windows server 2016 machine
+	- rename the server (after installation) to -> winsvr01
+	- set the dynamic IP address
+	- set the required subnet mask, default gateway
+	- set the DNS to 8.8.8.8
+
