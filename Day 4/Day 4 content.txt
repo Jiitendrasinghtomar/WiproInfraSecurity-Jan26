@@ -1,0 +1,155 @@
+- install the window server os
+- login to the server 
+- install the vmware tools. (do not reboot)
+- change the computer name (now reboot the server)
+
+Task 
+	- Install a windows server 2016 machine
+	- rename the server (after installation) to -> winsvr01
+	- set the dynamic IP address
+	- now  again, set the ip to 192.168.10.10
+	- set the required subnet mask, default gateway
+	- set the DNS to 8.8.8.8
+	- cmd: ncpa.cpl
+		IP address		: 192.168.10.10
+		Subnet    		: 255.255.255.0
+		Default gateway	: 192.168.10.1
+		DNS address		: 8.8.8.8
+		alternate DNS	: 8.8.4.4
+		
+File sharing methods:
+--------------------
+1. Samba server
+	- used for sharing data between different OSs.
+	- like linux to windows and vice-versa
+		L <-> W
+		w <-> L
+		L <-> L
+	- it is mostly used in cloud technologies.
+	- it uses SMB4.0 protocol
+	- port numbers: 445 (main), legacy system uses 139, 137, 138
+
+2. NFS
+	- Network File Sharing
+	- it shares the data between similar OSs
+	- like:
+		windows to windows
+		linux to linux
+	- port number: 111, 2049
+
+3. FTP
+	- File Transfer protocol
+	- it uses port 20 & 21 
+	- it allows users to upload or download the data.
+	- you can access FTP by:
+		- secured FTP (CLI or web browser, credentials are required)
+		- anonymous access (no credentials)
+			website --> https://IP-address
+			FTP		--> ftp://IP-address
+
+SSH server:
+-------------
+	- Secure SHell
+	- it allows user to remotely access another LINUX machine.
+	- its the alternate of TELNET server.
+		telnet server
+			- it is not a very secure protocol to connect to a remote system.
+			- it sends the data over the network as "PLAIN TEXT".
+			- it is used within a single server to communicate with other services.
+	- SSH encrypts the data before sending it to the network.
+	- SSH uses PKI (Public-Key Infrastructure)
+		- it uses private key to encrypt the data
+		- & it uses public key to decrypt the data.
+
+Windows 
+	- FAT
+	- FAT32
+	- NTFS (mostly used)
+	- ReFS
+
+LINUX
+	- EXT
+	- EXT2
+	- EXT3
+	- EXT4
+	- XFS  (mostly used)
+	- BTRFS
+	
+Msinfo32:
+-------
+	- a built-in windows app
+	- this application provides info like:
+		- overall system info
+			- OS version
+			- build number
+			- processor type
+			- RAM capacity
+		- hardware
+			- CPU details
+			- motherboard details
+			- memory configuration
+			- storage details
+		- software 
+			- drivers
+			- running services
+			- startup programs
+			- ENV variables
+
+MBR & GPT ==> partitoning styles of a HDD
+
+Partitions
+	1. Primary Partition - where you can install OS
+	2. Extended Partition - cannot store the OS
+	3. Logical Partition 
+		- it is created within Extended partiton.
+		- Any number of logical partitons can be created.
+MBR
+	- Master Boot Record
+	- size of MBR: 512bytes
+	- it supports:
+		1. Primary Partitions: 4
+		2. Max HDD size: 2TB
+GPT
+	- GUID (Globally Unique IDentifier) Partition Table
+	- size of GPT: 512bytes
+	- it supports:
+		1. Primary Partitions: 128
+		2. Max HDD size: 18Exabyte (18*10^6 GB)
+		
+CIA Triad
+=============
+C = Confidentiality
+I = Integrity
+A = Availability
+
+Confidentiality
+	- it ensures the information is accessible to only authorized users.
+
+Integrity
+	- it ensures the data must remain accurate and untempered.
+
+Availability
+	- data & systems must be available when needed.
+	- it means no unwanted downtime
+	
+How to implement Confidentiality
+	- user authentication
+		- username
+		- password
+		- Multi Factor Authentication (MFA)
+	- Allow RBAC (RoleBased Access Control)
+	- apply least privilege
+	- data encryption (in-transit, at-rest)
+	- firewalls & VPNs
+	
+How to implement Integrity
+	- hashing (SHA512, MD5)
+	- digital signatures --> PowerShell
+	- checksums
+
+How to implement Availability
+	- redundancy (backup copies)
+	- load balancer
+	- patch management (updating/upgrading)
+	- DDOS protection
+	
