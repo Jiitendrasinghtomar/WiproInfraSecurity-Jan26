@@ -1,0 +1,66 @@
+Windows --> Windows Defender Firewall --> built-in
+Linux	--> firewall-cmd, iptables (IPv4) & ip6tables (IPv6)  --> built-in
+
+
+symmetric key cryptography:
+	- uses single key to encrypt and decrypt data.
+	- ex: key of your house, same key locks the door and unlocks the door too.
+	- this key is faster in nature.
+	- it can be used for working with bulk data.
+	
+Asymmetric key cryptography:
+	- it uses 2 keys 
+		1. for encryption
+		2. for decryption
+	- ex: - a mail/leeter box having an opening for everyone to put letters into it (encrypted data), but YOU are the only one who can open theat box with your key (decryption)
+	- this scenarios makes it slower in nature
+	- it cannot be used for bulk data.
+	
+Hybrid cryptography
+	- this uses the combination of symmetric & Asymmetric methods.
+	
+Hash function
+	- cannot be reversed
+	- it takes input then converts it to fixed length output.
+	
+security posture assessment:
+---------------------------
+NMAP
+	- 1 server  machine: Centos 9
+		- Internet connection: NAT
+			- if internet is not working, then provide static IP address
+			- IP Address: 192.168.10.100/24
+		- IP: 192.168.159.128 (dynamic-NAT)
+		- Tool required: nmap (pre-installed)
+		
+	- 1 target machine: Windows server 2022
+		- Internet connection: NAT
+			- if internet is not working, then provide static IP address
+			- IP Address: 192.168.10.110/24
+		- IP: 192.168.159.129 (dynamic-NAT)
+		
+Steps:
+	- power on both centos 9 & windows server
+	- both VMs must be under NAT (Network Adapter, with dynamic IP address) or under Lan Segment (with static IP address)
+	- both machines must ping each other.
+		- linux 	--> # ping <win-server-ip-address>
+		- Windows 	--> # ping <linux-server-ip-address>
+	- turnoff firewall on both VMs
+		- windows 	-> 	ncpa.cpl
+		- linux		-> 	systemctl stop firewalld
+						systemctl status firewalld
+	- use "nmap" on centos machine to check for the target machine details
+	
+DNS
+----
+- records
+	- A record 			- list IPv4
+	- AAAA record 		- list IPv6
+	- NS record			- Name Server
+	- MX record			- Mail exchange 
+	- SOA record 		- start of authority
+	- PTR record		- Pointer 
+	- CNAME record		- Canonical Name (alias name)
+	- TXT record		- text record for any website
+	- 
+	
