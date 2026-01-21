@@ -1,0 +1,94 @@
+switches --> L2
+switches --> L3
+
+difference between L2 switches and L3 switches???
+
+Private IP addresses
+Class A IP address		-> 16M
+Class B IP address		-> 65536
+Class C IP address		-> 256
+
+CIDR
+	- Fixed-length subnet mask
+		- /8, /16, /24
+	- variable-length subnet mask
+	
+Networking commands
+--------------------
+to list IP address
+	- windows 	- ipconfig, Get-NetIPAddress | Format-Table
+	- linux		- ifconfig, ip address
+	
+to test connection of a remote system (is alive or not)
+	- windows 	- ping, test-connection
+	- linux		- ping
+	
+to trace the network
+	- windows 	- tracert
+	- linux		- traceroute
+	
+list DNS address
+	- windows 	- ipconfig /all
+	- linux		- cat  /etc/resolv.conf
+	
+DNS resolution
+	- windows 	- nslookup
+	- linux		- nslookup, dig
+	
+ARP 
+	- windows 	- arp -a
+	- linux		- arp -a, ip neigh
+	
+port number & service
+	- windows 	- netstat -ano
+	- linux		- netstat -tulpn, ss -tulpn
+	
+remote logging
+	- windows 	- mstsc (GUI-RDP), Powershell Remoting
+	- linux		- ssh
+	
+Packet capture
+	- windows 	- netsh
+	- linux		- tcpdump
+	
+bandwidth & performance testing
+	- windows 	- iperf3
+	- linux		- iperf3
+	
+Hypervisor
+--------
+	- its a tool to achieve virtualization
+	- HV is of 2 types:
+		1. Type - 1 Hypervisor
+			- aka bare matel HV
+			- these can be installed directly on top of the hardware.
+			- they act as an operating system.
+			- example:
+				- Microsoft Hyper-V (role)
+				- VMWare ESXi
+				- Citrix XenServer
+				- Proxmox
+		2. Type - 2 Hypervisor
+			- guest-based HV
+			- these HVs requires an OS to work/function.
+			- example:
+				- Microsoft Hyper-V (additional feature on client)
+				- VMWare workstation
+				- Linux KVM
+				- Oracle Virtual Box
+				- VMWare Fusion (MacOS)
+				- VMWare player (free)
+				
+Containerization
+-----------------
+	- its the advanced version of virtualization
+	- its is much better than hypervisor
+	- a container engine runs the containers with minimum hardware requirements
+	- containerization is dependent on the host operating system
+		- if the host OS is windows, then only windows-based containers can be created
+		- if the host OS is linux, then only linux-based containers can be created
+	- features
+		- containers can be created within seconds.
+		- containers can be rebooted within seconds (2-3 seconds).
+		- if a container fails, we wait for it to self-heal.but if the container cannot be recovered back after healing, then you delete this container and create a new container.
+		
