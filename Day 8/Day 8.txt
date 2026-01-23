@@ -1,0 +1,60 @@
+AD performs AAA
+	- Authentication
+	- Authorization
+	- Accounting
+
+	
+FSMO - Flexible Single Master Operation
+
+In AD, we have FSMO roles --> responsibility
+	- forest-level
+		1. Domain Naming Master
+			- add or remove domains within forest.
+		2. Schema Master
+			- controls the whole schema/blueprint of AD.
+	- domain-level
+		3. RID master
+			- Relative IDentifier (pool of unique IDs - 500)
+		4. Infrastructure Master
+			- cross-domain object reference
+		5. PDC (Primary Domain Controller) Emulator
+			- it handles the time sync within the domain.
+			- it manages the password change
+			- it supports the legacy authentication
+Note - these roles can be transfered to another servers (ADC).
+		
+to create a domain controller:
+	- install a windows server OS
+	- setup
+		- hostname
+		- IP address --> static (lan segment)
+		- firewall
+		- install VMWare tools and reboot it.
+	- install ADDS role
+	- promote this server to DC by configuring it.
+	- reboot
+	- login as domain administrator
+		-> domainname\username or
+		-> username@domainname
+	- domain join a member machine (server OS or client OS)
+	
+	
+Server IP details
+	- IP address: 192.168.10.10
+	- subnet mask: 255.255.255.0
+	- Default gateway: 192.168.10.1
+	- DNS: 192.168.10.10
+	
+Client IP details
+	- IP address: 192.168.10.11
+	- subnet mask: 255.255.255.0
+	- Default gateway: 192.168.10.1
+	- DNS: 192.168.10.10
+	
+to create a user in AD:
+	1. GUI --> Dashboard --> Tools
+			--> Active Directory Users and Computers
+			
+	2. PowerShell
+		> New-ADUser
+		
