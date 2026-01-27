@@ -1,0 +1,82 @@
+Mail exchange server
+	- windows: Microsoft Exchange Server
+	- linux: postfix (send) and dovecot (receives)
+	
+file sharing
+---------------
+1. Samba share
+	- for sharing data between different OS
+		L <--> W
+		L <--> L
+	- mostly used by cloud for sharing the data.
+	- cloud uses SMB4.0 protocol to share the data.
+		SMB = Service Message Block
+	- once available, it looks like a local hard drive (disk)
+
+2. NFS share
+	- for sharing data between similar OS
+		L <--> L
+		W <--> W
+
+Backup
+---------
+1. Full backup
+	- it captures all the copies of the backup.
+	- for the 1st time, full backup will be taken.
+	
+2. Incremental backup
+	- it copies only data changed since last backup.
+	- it can be used for backing up data on regular intervals.
+	
+3. Differential backup
+	- it copies all data changed since last "FULL" backup.
+	
+22 or 5985(HTTP)/5986(HTTPS)	--> Linux/Powershell remoting port numbers
+
+Palo-Alto firewall 	--> license
+ipcop				--> free, linux-based firewall
+
+RH-124, RH-134, RH-245
+
+
+NAT policy (using Cisco Packet Tracer)
+----------------------------------------
+setup:
+	- Network 1 - 192.168.1.0/24
+	- Network 2 - 203.0.113.0/24
+	- Router (1st interface) - 192.168.1.1/24
+	- Router (2nd interface) - 203.0.113.1/24
+	- Laptop1 
+		- IP: 192.168.1.10/24
+		- GW: 192.168.1.1
+	- Laptop2
+		- IP: 192.168.1.20/24
+		- GW: 192.168.1.1
+	- server0
+		- IP: 203.0.113.10/24
+		- GW: 203.0.113.1
+	- Router0
+		- Gig0/0 - 192.168.1.1/24
+		- Gig0/1 - 203.0.113.1/24
+
+
+Palo-Alto Firewall
+------------------
+	- its a Next-Generation Firewall (NGFW)
+	- it has advanced features like:
+		- Deep packet inspection
+		- IDS/IPS
+		- DDOS protection
+		- Application-level inspection
+		- user identification
+		- web content filtering
+	- it helps in real-time content scanning.
+	- it supports 
+		- spyware protection
+		- data-leakage
+		- application vulnerabilities
+	- 3 main features of PA-FW
+		- App-ID 		- identify the application
+		- Content-ID 	- scans the content
+		- User-ID		- identify the user
+
