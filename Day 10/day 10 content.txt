@@ -1,0 +1,69 @@
+Palo-Alto Firewall Cmds
+----------------------------
+basic commands
+===============
+to list system information		- show system info 
+check the system state			- show system state
+list system resources			- show system resources
+list disk space					- show system disk-space
+
+Network commands
+===================
+to list all interfaces			- show interface all
+list 1 ethernet					- show interface ethernet1/1
+list management interface		- show interface management
+list ARP entries				- show arp all
+ping to any address				- ping host <ip-address>
+trace the route					- traceroute host <ip-address>
+
+Policy & security commands
+==========================
+list security policies			- show running security-policy
+list NAT policies				- show running nat-policy
+
+traffic and application commands
+=================================
+to list all the session			- show session all
+details of a session			- show session id <session-id>
+list application details		- show application all
+list application statistics		- show application statistics
+
+admin level changes
+=======================
+to make configuration changes 	- configure
+to save the changes				- commit
+
+Blocking application using App-ID 
+
+URL Filtering: 
+----------------
+	- it is a content-id security control.
+	- it allows admin to 
+		- classify
+		- monitor
+		- allow or block
+		- alert
+		- override web traffic
+	- Palo-Alto uses PAN-DB (or BrightCloud for legacy options) to dynamically categorize the URL in real-time.
+	- categorize like:
+		- social media
+		- gambling
+		- adult
+		- streaming media
+		- hacking
+		- online storage
+		- malware
+		- phishing
+	- pre-requisites for URL filtering
+		- license is required
+		- security policy allowing web traffic
+		- DNS resolution must be working
+		- SSL decryption enabled (optional)
+		- user-id configuration
+		
+category:
+	- malware				--> block
+	- phishing				--> block
+	- adult					--> block
+	- gambling				--> block
+	- social-networking		--> alert
