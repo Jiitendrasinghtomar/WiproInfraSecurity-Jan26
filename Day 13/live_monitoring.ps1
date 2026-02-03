@@ -41,14 +41,14 @@ Write-Host "[+] Monitoring Event ID 4688 (Polling Mode)..." -ForegroundColor Cya
 while ($true) {
 
     $Events = Get-WinEvent -FilterHashtable @{
-        LogName = $LogName
-        Id      = $EventID
-    } | Where-Object { $_.RecordId -gt $LastRecordId }
+        LogName = "security"
+        Id      = "4688"
+    } | Where-Object { $_.RecordId -gt $RecordId }
 
     foreach ($Event in $Events) {
 
         # Update last processed record
-        $LastRecordId = $Event.RecordId
+        $RecordId = $Event.RecordId
 
         $Time       = $Event.TimeCreated
         $User       = $Event.Properties[1].Value
