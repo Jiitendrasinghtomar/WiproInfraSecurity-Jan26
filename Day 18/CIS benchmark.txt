@@ -1,0 +1,38 @@
+CIS Benchmark steps:
+========================
+-> pre-requisites
+	- login as administrator
+		- enable the account
+		- set the password for administrator account
+	- enable the windows update --> Internet
+		- settings --> update & security --> Windows Update --> check for updates
+	- download CIS Benchmark and templates
+		- download windows 10 benchmark
+		- apply GPOs for complaince
+
+-> configure account policies
+	- configure password policies
+	- configure account lockout policies
+
+-> configure local policies
+	- audit policies
+	- user assignment policies
+	- security policies
+
+- configure firewall			--> done
+- configure audit policies		--> done
+- configure MS Defender			--> done
+- disable unwanted services
+	- xbox services		--> stop & disable
+	- print				--> stop & disable
+	- bluetooth service	--> stop & disable
+
+- secure RDP
+- configure User Access Control (UAC)
+- disable SMBv1
+- configure logs and events
+- configure bitlocker
+- browser hardening
+- apply CIS registry hardening
+- validate compliance
+- continous monitoring
