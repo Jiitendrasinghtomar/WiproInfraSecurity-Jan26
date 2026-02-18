@@ -1,0 +1,31 @@
+OpenSource IR tool
+	- Name: OSQUERY
+	- open source IR tool
+	- based-on: Linux
+
+Archive 
+	- combining multiple files and folder together.
+	- similar to ZIP in windows
+	- this does not reduce the file size.
+	- we use the tool -> tar
+	cmd
+		create a tar - # tar  -cvf  file.tar file1 file2 ...
+		extract tar  - # tar  -xvf  file.tar
+	
+Compression
+	- reducing the actual file size 
+	- we have tools like:
+		- GZIP	- slow in nature, but compresses high data
+		- BZIP2	- faster in nature, but compresses low data
+		
+PSSession	--> remotely connecting to  windows machine
+
+verb-noun
+	get-date
+	get-process
+	new-pssession
+	
+1st value - timestamp
+2nd value - server on which event occured
+3rd value - user/system/service
+4th value - actual message
