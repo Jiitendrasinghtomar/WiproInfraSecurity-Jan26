@@ -1,0 +1,55 @@
+Network investigation
+-----------------------
+	- using wireshark
+		- # tcpdump -i eth0 -w capture.pcap
+	- using nmap
+		- identify SYN scans
+		
+Host investigation
+-----------------------
+On windows
+	- Sysmon
+		- install manually from the MS website
+		- Log source: "Microsoft-Windows-Sysmon/Operational"
+	- Eventlogs
+		- to fetch the events of sysmon
+			Event viewer -> Applications and service logs -> Microsoft -> Windows -> Sysmon
+			
+For apache logs in Centos:
+	access logs -> /var/log/httpd/access.log
+	error  logs -> /var/log/httpd/error.log
+	
+Red team
+----------------
+Basic
+	- PNTP
+	- CBBH
+	- CRTP
+	- CEH
+Intermediate
+	- OSCP
+	- OSWP
+	- OSWA
+	- OSEP
+Advance
+	- OSMR
+	- OSED
+	- CRTO
+
+Blue Team
+---------------
+Basic
+	- Security+
+	- CSA
+	- eCDFP
+	- BTL1
+Intermediate
+	- CySA+
+	- BTL2
+	- eCTHP
+	- CCD
+	- CDSA
+	- OSDA
+Advance
+	- GCFA
+	- CASP+
