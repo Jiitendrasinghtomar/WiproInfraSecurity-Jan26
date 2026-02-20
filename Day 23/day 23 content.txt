@@ -1,0 +1,50 @@
+Visudo 
+	- visudo is the command to manage the sudo access on linux.
+	- to provide the admin privileges to a normal/regular user.
+	- Visudo is a command
+	- but in the backend, it modifies a file "/etc/sudoers" [readonly] that makes any user root equivalent.
+	
+	user <--> visudo --> /etc/sudoers
+	
+lab setup:
+--------------
+	1. DC				--> for RanSim sim
+	2. Member 			--> Windows Defender scan
+	3. Linux (CentOS) 	--> for Infection Monkey
+	
+Infection Monkey
+-----------------
+- this tool is opensource
+- its an automated pentesting tool.
+- this tool is used widely for data center security testing.
+- Infection Monkey contains 2 parts:
+	1. Monkey - a tool which infects other machines and propagate them. 
+	2. Monkey Island - a dedicated server to control and visualize the Infection Monkey's progress within the datacenter.
+- Features:
+	- multiple propagation techniques:
+		- Predefined passwords
+		- common logical exploits
+		- password stealing using Mimikatz
+	- Multiple exploits methods:
+		- SSH, SMB
+		- RDP, WMI
+		- SambaCry
+		- Elastic Search
+		
+After download, run the following
+- to give the executable permissions	
+	# chmod u+x InfectionMonkey-v2.3.0.AppImage
+	
+- to run the config:
+	# ./InfectionMonkey-v2.3.0.AppImage
+	
+- open the dashboard
+	- go to web browser and access 
+		https://<IP-address>:5000
+		
+- once you get the "FIRST TIME?" page, give a new username and password
+
+- after login, configure the network with the IP range
+	192.168.159.0/24
+	
+- run the scanner, and go to "Infection Map".
