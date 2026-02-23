@@ -1,0 +1,75 @@
+PowerShell
+- its the task automation tool.
+- its a scripting language.
+- PowerShell totally depends on cmdlets (commands)
+- it has multiple extensions
+	- .ps1 (main)
+	- .psm1
+- PowerShell
+	- provides more admin level priv. than cmd prompt.
+- what PowerShell can do:
+	- it can connect with the database
+	- it can perform admin jobs in a local machine.
+	- it can perform admin jobs in a remote machine.
+	- it can install, uninstall, update softwares/patches on system
+	- it can create resources on cloud (Azure, AWS, GCP)
+	- it works as configuration management (CM) tool --> PowerShell DSC
+	- it can manage non-windows (linux, MacOS) also. --> version 6 or above.
+
+- there are NO OFFICIAL PowerShell EXAMs
+- but PowerShell has 2 official modules to study
+	- 10-961 (basic powershell)
+	- 10-962 (advance powershell)
+- for azure,
+	- az-140 (PowerShell on Azure)
+
+cmdlets
+--------
+to list date & time
+	> Get-date		
+
+to list all the running processes
+	> get-process
+
+to list all the services
+	> get-service
+
+to list current directory files and folders
+	> get-childitem	or
+	> gci
+	> ls
+
+to work with PowerShell
+	- Get-Command
+	- Get-Help
+	
+where to run powershell cmdlets
+	- Powershell Console
+	- PowerShell ISE (Integrated Scripting Environment)
+	- VSCode Editor
+
+Note - PowerShell cmdlets depends on the MODULES
+	- Modules for Azure
+	- Modules for AWS
+	- Modules for VMWare ESXi
+	- Modules for GCP
+	
+PowerShell Versions
+	- PowerShell v2.0	--> XP
+	- PowerShell v3.0	--> Win 7
+	- PowerShell v4.0	--> Win 8.0
+	- PowerShell v5.0	--> Win 8.1
+	- PowerShell v5.1	--> Win 10
+----------------------------------------
+in year 2016 --> PS went Opensource --> PowerShell Core
+	- PowerShell v6.x	--> for all types of OS (windows, linux, Mac)
+	- PowerShell v7.x	--> for all types of OS (windows, linux, Mac)
+----------------------------------------	
+Command to list current PS version
+	- $PSVersionTable
+	- $host.version
+	
+executable command for PowerShell (go to run prompt & type)
+	- powershell.exe		--> PSv5.1
+	- pwsh.exe				--> PSv7.x
+	
