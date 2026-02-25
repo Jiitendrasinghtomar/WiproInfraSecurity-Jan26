@@ -1,0 +1,63 @@
+- install windows server 2022
+	- username & password
+	- IP address
+	- turnoff firewall
+	- set the computer name
+	- restart
+	- after restart, login and take snapshot.
+	-config DC, promote this to domain controller, restart	
+		- take snapshot
+	
+- install centos
+	- turnoff firewall
+	- turnoff SELinux
+	- after restart, login and take snapshot.
+	- clone this VM.
+		- after the vm is cloned, login to this VM and change the hostname and IP address.
+		
+		
+Microsoft Endpoint Detection & Response
+	- EDR stores the logs within Log analytics workspaces
+	- you can fetch data from workspace using KQL (Kusto Query language).
+	- it is manadatory to create log analytics workspace in azure to store the data.
+	- log analytics
+		- no time limit
+		- no size limit
+
+vulnerability assessment	--> method
+infection monkey			--> tool
+
+Microsoft MDE 
+	- tool
+	- has a feature EDR
+	- NGAV (Next Gen Anti Virus)
+	- threat & vulnerability management
+	- Automated Investigation and Response (AIR)
+	- Attack Surface Reduction (ASR)
+	- Advance hunting (KQL)
+	- integrated with several Microsoft tools
+	
+
+simple architecture:
+	Intune		-> configures and manages endpoint
+	Defender	-> Protect endpoints
+	Sentinel	-> Monitor entire enterprise
+	
+Extended Detection and Response (XDR)
+	- similar to EDR (collecting, correlates and analyzes) but, it performs it across multiple security domains (identity, Emails, Network)
+	
+Windows server OS activation
+	- manually punch the key
+	- bulk activation (enterprise)
+	- AD activation
+	- KMS
+	
+URL:
+	Microsoft Defender for Endpoint --> https://security.microsoft.com
+	Microsoft Intune Portal			--> https://endpoint.microsoft.com
+	Microsoft 365 Admin Portal		--> https://admin.microsoft.com
+	Microsoft 365 Portal			--> https://m365.cloud.microsoft
+	Microsoft Azure					--> https://portal.azure.com
+	
+Azure subscription --> log analytics 
+Defender
