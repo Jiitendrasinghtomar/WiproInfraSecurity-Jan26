@@ -1,0 +1,25 @@
+remote connection
+-------------------
+Linux
+	- CLI
+		- SSH (22)
+		- Telnet (23)
+	- GUI
+		- Tiger VNC (59xx)
+Windows
+	- GUI
+		- RDP (3389)
+		- Azure Bastian Service (web browser - 80, 443)
+	- CLI
+		- Powershell
+			- Persistant Remoting
+				- connection stays open and does not disconnect automatically.
+				- # New-PSSession 
+			- Non-Persistant Remoting
+				- connection stays open and disconnect automatically, after code is executed.
+				- # Invoke-command -> 64 machines
+				
+				
+	MS Word --> Macros (ALT+F11) --> Notepad
+	
+	
